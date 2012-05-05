@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Login</h1>
+
+<%= form_tag sessies_path  do %>
+  <p>
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, params[:email] %>
+  </p>
+  <p>
+    <%= label_tag :wachtwoord %><br />
+    <%= password_field_tag :wachtwoord %>
+  </p>
+  <p class="button"><%= submit_tag %></p>
+<% end %>

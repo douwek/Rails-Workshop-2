@@ -1,0 +1,29 @@
+<h1>Listing gebruikers</h1>
+
+<table>
+  <tr>
+    <th>Naam</th>
+    <th>Email</th>
+    <th>Wachtwoord hash</th>
+    <th>Wachtwoord salt</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gebruikers.each do |gebruiker| %>
+  <tr>
+    <td><%= gebruiker.naam %></td>
+    <td><%= gebruiker.email %></td>
+    <td><%= gebruiker.wachtwoord_hash %></td>
+    <td><%= gebruiker.wachtwoord_salt %></td>
+    <td><%= link_to 'Show', gebruiker %></td>
+    <td><%= link_to 'Edit', edit_gebruiker_path(gebruiker) %></td>
+    <td><%= link_to 'Destroy', gebruiker, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gebruiker', new_gebruiker_path %>

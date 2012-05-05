@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voorbeeld</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="navigatie">
+	<% if ingelogd %>
+	Ingelogd als <%= ingelogd.naam %> |
+	<%= link_to "Uitloggen", logout_path %>
+	<% else %>
+	<%= link_to "Registreren", registreer_path %> of 
+	<%= link_to "Inloggen", login_path %>
+	<% end %>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<%= yield %>
+
+</body>
+</html>
